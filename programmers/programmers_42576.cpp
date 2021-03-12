@@ -13,9 +13,9 @@ string solution(vector<string> participant, vector<string> completion) {
 
     for(int i = 0; i < participant.size(); i++){
         if(participant[i] != completion[i]){
-            answer = participant[i]; break;
+            return answer = participant[i];
         }
     }
 
-    return answer;
+    return answer = participant[completion.size() - 1];
 }
