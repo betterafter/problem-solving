@@ -4,6 +4,8 @@
         "string": "cpp",
         "iosfwd": "cpp",
         "vector": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "memory": "cpp",
+        "utility": "cpp"
     }
 }
