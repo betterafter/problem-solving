@@ -49,7 +49,7 @@ class node{
         node n;
         for(int i = 0; i < curr.child.size(); i++){
             n = search(target, curr.child.get(i));
-            if(n != null) curr = n;
+            if(n != null) {curr = n; break;}
         }
         if(temp == curr) return null;
         else return curr;
