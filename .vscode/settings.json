@@ -6,6 +6,7 @@
         "vector": "cpp",
         "queue": "cpp",
         "memory": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "algorithm": "cpp"
     }
 }

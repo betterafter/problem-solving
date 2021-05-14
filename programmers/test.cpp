@@ -1,39 +1,61 @@
-#include <string>
-#include <vector>
-#include <math.h>
-#include <queue>
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
 #include <iostream>
-#include <map>
 
 using namespace std;
 
-int nn[8];
-
-queue<int> q;
-map<int, int> dp;
-
-int solution(int N, int number) {
-
-    int answer = 0;
+bool solution(int n) {
+    bool answer=false;
+    int num=1;
+    int ans=0;
+    int temp=10;
+    int tem=10;
     
-    int n = 0;
-    for(int i = 0; i < 8; i++){
-        n = n * 10 + N;
-        cout << n << '\n';
-        nn[i] = n; q.push(n); dp[n] = i + 1;
-    }
-    for(int i =0; i < 8; i++){
-        cout << nn[i] << " ";
-    }
-    cout << dp.size() << '\n';
+    //n의 자리수 구하기
+    // for(int i=1; i<9;i++){
+    //     if(n/temp < 0 )
+    //         break;
+    //     else{
+    //         temp=temp*10;
+    //         num++;
+    //     }
+    // }
 
+    int t = n;
+    while(t / temp > 0){
+        t /= temp;
+        num++;
+    }
     
-    return answer;
+
+//n의 각 자리의 합 구하기
+// for(int i=0; i<num; i++)
+//     { ans = ans + n%tem;
+//     n = (n-(n%tem))/10;
+//     }
+    t = n;
+    for(int i = 0; i < num; i++){
+        ans = ans + t % temp;
+        t /= temp;
+    }
+    
+    cout << n << " " << ans;
+
+   //하샤드 수인지 판별 
+ if(n % ans != 0)
+    return false;
+ else
+     return true;
+       
+    
+    
 }
 
 int main(){
 
-    solution(5, 12);
+    if(!solution(1234)) cout << "false";
+    else cout << "true";
 
     return 0;
 }
