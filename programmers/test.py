@@ -21,9 +21,9 @@ def padding(buffer):
 
 def solution():
 
-    ans = [[1,2,3], [2,4,6], [4,5,7],[2,4,7],[1,3,6],[4,5,6],[4,5,8],[1,2,4],[1,3,3],[2,5,6],[3,4,6]]
-    ans.sort(key=lambda x : (x[0], x[1], x[2]))
-    print(ans)
+    test = 'test'
+    test[0] = 'e'
+    print(test)
 
 
 solution()
