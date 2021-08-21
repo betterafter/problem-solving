@@ -1,29 +1,26 @@
-
-# bool : 1
-# short : 2
-# int : 4
-# long : 4
-# double : 8
-
-#       #.######
-#       bool bool short short
-#       bool bool int short
-#       bool . . . long
-
-
-def padding(buffer):
-    nbuffer = []
-    # 다음 원소가 마지막인데 아직 다 안 찼으면 .으로 채움
-
-    # bool이고 다음 것도 bool이면 ##, 아니면 #.
-
-
+import re
+from string import ascii_lowercase
 
 def solution():
 
-    test = 'test'
-    test[0] = 'e'
-    print(test)
+    #b = re.compile("[^a-z]muzi[^a-z]")
+    #print(b.findall("0muzi0muzi0muzi !muzimuzi! "))
 
+    word = "muzi"
+    page = "0muzi0muzi0muzi !muzimuzi! "
+    basic = []
+    alpha_list = list(ascii_lowercase)
+    i = page.find(word)
+    print(len(word))
+    while(i >= 0):
+        if page[i - 1] not in alpha_list and page[i + len(word)] not in alpha_list:
+            basic.append(word)
+        page = page[i + len(word):]
+        i = page.find(word)
+        
+        #print(idx)
+
+
+    print(basic)
 
 solution()
