@@ -1,5 +1,5 @@
 
-class Solution {
+class Solution_72411 {
 
     var m = mutableMapOf<String, Int?>()
 
