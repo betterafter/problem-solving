@@ -1,8 +1,6 @@
+class Solution_81303 {
 
-
-
-class Solution {
-
+    var list = mutableListOf<String>()
     var table = mutableListOf<String>()
     var del = mutableListOf<Pair<String, Int>>()
 
@@ -10,6 +8,7 @@ class Solution {
         var curr = k
         (0..n - 1).forEach { it ->
             table.add(it.toString())
+            list.add("X")
         }
 
         cmd.forEach { order ->
@@ -23,21 +22,17 @@ class Solution {
                 'C' -> {
                     del.add(Pair(table[curr], curr))
                     table.removeAt(curr)
-                    if (curr == table.lastIndex) curr -= 1
+                    if (curr == table.size) curr -= 1
                 }
                 'Z' -> {
                     val data = del.last()
                     del.remove(data)
-                    if (data.second < curr) curr += 1
-                    if(data.second > table.lastIndex)
-                        table.add(data.first)
-                    else table.add(data.second, data.first)
+                    if (data.second <= curr) curr += 1
+                    table.add(data.second, data.first)
                 }
             }
         }
 
-        var list = mutableListOf<String>()
-        (0..n-1).forEach { list.add("X") }
         table.forEach { 
             list[it.toInt()] = "O"
         }
