@@ -1,4 +1,4 @@
-class Solution1446 {
+class Solution1446kt {
 
     fun maxPower(s: String): Int {
 
