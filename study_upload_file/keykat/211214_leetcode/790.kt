@@ -1,4 +1,4 @@
-class Solution790 {
+class Solution790kt {
 
     val dp = mutableListOf<Int>(1, 1, 2)
     val mod = 1000000007

@@ -1,4 +1,4 @@
-class Solution1 {
+class Solution1kt {
     fun twoSum(nums: IntArray, target: Int): IntArray {
         for (i in 0..nums.size - 1) {
             for (j in i+1..nums.size - 1) { 

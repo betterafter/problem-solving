@@ -1,4 +1,4 @@
-class Solution11 {
+class Solution11kt {
 
     var left = 0
     var right = 0

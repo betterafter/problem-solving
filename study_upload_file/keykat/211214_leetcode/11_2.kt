@@ -1,4 +1,4 @@
-class Solution11_2 {
+class Solution11_2kt {
 
     var maxCont = 0
     fun maxArea(height: IntArray): Int {
