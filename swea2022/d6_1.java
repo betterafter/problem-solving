@@ -2,34 +2,33 @@ package swea2022;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.LinkedList;
 import java.util.StringTokenizer;
 
-class Node {
+class Node_d6_1 {
     int data;
     int size = 0;
-    Node next;
-    Node prev;
+    Node_d6_1 next;
+    Node_d6_1 prev;
 
-    public Node(int data) {
+    public Node_d6_1(int data) {
         this.data = data;
     }
 }
 
-class UserSolution {
-    Node[] list = new Node[101];
-    Node[] tails = new Node[101];
+class UserSolution_d6_1 {
+    Node_d6_1[] list = new Node_d6_1[101];
+    Node_d6_1[] tails = new Node_d6_1[101];
 
 	public void dfs_init(int N, int[][] path) {
         for (int i = 0; i < 100; i++) {
-            list[i] = new Node(-100);
-            tails[i] = new Node(-100);
+            list[i] = new Node_d6_1(-100);
+            tails[i] = new Node_d6_1(-100);
             list[i].next = tails[i];
             tails[i].prev = list[i];
         }
 
         for (int i = 0; i < N; i++) {
-            Node node = new Node(path[i][1]);
+            Node_d6_1 node = new Node_d6_1(path[i][1]);
             node.prev = tails[path[i][0]].prev;
             node.next = tails[path[i][0]];
             tails[path[i][0]].prev.next = node;
@@ -49,7 +48,7 @@ class UserSolution {
 
     void d(int curr, int king) {
         if (list[curr].size == 0) return;
-        Node node = list[curr].next;
+        Node_d6_1 node = list[curr].next;
         while (node.data != -100) {
             if (node.data > king) {
                 res = node.data;
@@ -64,14 +63,14 @@ class UserSolution {
     }
 }
 
-class Solution {
+class Solution_d6_1 {
 
 	private final static int MAX_N = 40;
 	private final static int MAX_K = 98;
 	private final static int MIN_N = 2;
 	private final static int MAX_CHILD = 5;
 	
-	private final static UserSolution usersolution = new UserSolution();
+	private final static UserSolution_d6_1 usersolution = new UserSolution_d6_1();
 	
 	private static BufferedReader br;
 	
