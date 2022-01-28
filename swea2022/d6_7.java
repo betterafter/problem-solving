@@ -7,27 +7,27 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 
-class Node implements Comparable<Node> {
+class Node_d6_7 implements Comparable<Node_d6_7> {
     int from, to;
     long val;
 
-    public Node(int from, int to, long val) {
+    public Node_d6_7(int from, int to, long val) {
         this.from = from;
         this.to = to;
         this.val = val;
     }
     
     @Override
-    public int compareTo(Node o) {
+    public int compareTo(Node_d6_7 o) {
         if (this.val < o.val) return -1;
         else if (this.val > o.val) return 1;
         else return 0;
     }
 }
 
-class Solution
+class Solution_d6_7
 {
-    static ArrayList<Node> nodes;
+    static ArrayList<Node_d6_7> nodes;
     static int[] parent = new int[50010];
 
     static int find(int u){
@@ -57,7 +57,7 @@ class Solution
                 int s = Integer.parseInt(input[0]);
                 int e = Integer.parseInt(input[1]);
                 long c = Long.parseLong(input[2]);
-                nodes.add(new Node(s, e, c));
+                nodes.add(new Node_d6_7(s, e, c));
             }
 
             for (int i = 0; i <= N; i++) {
