@@ -6,15 +6,15 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 
-class Node {
+class Node_d7_3 {
     int[] parent = new int[21];
     ArrayList<Integer> children = new ArrayList<>();
     int depth = 0;
 }
 
-class Solution
+class Solution_d7_3
 {
-    static Node[] tree = new Node[100001];
+    static Node_d7_3[] tree = new Node_d7_3[100001];
 
     static int lca(int i, int j) {
         if (tree[i].depth > tree[j].depth) {
@@ -54,7 +54,7 @@ class Solution
             n2 = Integer.parseInt(input[3]);
 
             for (int i = 0; i <= V; i++) {
-                tree[i] = new Node();
+                tree[i] = new Node_d7_3();
             }
 
             String[] input2 = br.readLine().split(" ");
