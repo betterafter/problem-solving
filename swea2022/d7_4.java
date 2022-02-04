@@ -5,32 +5,32 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Scanner;
 
-class Pair<T, E> {
-    Node first, second;
-    public Pair(Node first, Node second) {
+class Pair_d7_4<T, E> {
+    Node_d7_4 first, second;
+    public Pair_d7_4(Node_d7_4 first, Node_d7_4 second) {
         this.first = first;
         this.second = second;
     }  
 }
 
-class Node {
-    Node parent;
-    HashMap<String, Node> map = new HashMap<>();
+class Node_d7_4 {
+    Node_d7_4 parent;
+    HashMap<String, Node_d7_4> map = new HashMap<>();
     String name;
 
-    public Node() { }
-    public Node(String name) {
+    public Node_d7_4() { }
+    public Node_d7_4(String name) {
         this.name = name;
     }
 }
 
-class UserSolution {
+class UserSolution_d7_4 {
 
 	private final static int NAME_MAXLEN	= 7;
 	private final static int PATH_MAXLEN	= 1999;
-    static Node[] nodes = new Node[100010];
+    static Node_d7_4[] nodes = new Node_d7_4[100010];
     static int cnt = 0;
-    Node root;
+    Node_d7_4 root;
 
     static void mstrcpy(char[] dest, char[] src) {
 		int i = 0;
@@ -53,9 +53,9 @@ class UserSolution {
         root = getNode("");
 	}
 
-    Node getNode(String name) {
+    Node_d7_4 getNode(String name) {
         if (nodes[cnt] == null) { 
-            nodes[cnt] = new Node(name);
+            nodes[cnt] = new Node_d7_4(name);
         } else {
             nodes[cnt].name = name;
             nodes[cnt].map.clear();
@@ -63,11 +63,11 @@ class UserSolution {
         return nodes[cnt++];
     }
 
-    Node findNode(char[] path) {
+    Node_d7_4 findNode(char[] path) {
         try{
             String[] paths = new String(path).split("/");
 
-            Node curr = root;
+            Node_d7_4 curr = root;
             for (int i = 1; i < paths.length - 1; i++) {
                 curr = curr.map.get(paths[i] + '\0');
             }
@@ -78,8 +78,8 @@ class UserSolution {
 
 	void cmd_mkdir(char[] path, char[] name) {
         try {
-            Node node = getNode(new String(name));
-            Node curr = findNode(path);
+            Node_d7_4 node = getNode(new String(name));
+            Node_d7_4 curr = findNode(path);
             curr.map.put(new String(name), node);
             node.parent = curr;
             
@@ -88,41 +88,41 @@ class UserSolution {
 
 	void cmd_rm(char[] path) {
         try {
-            Node curr = findNode(path);
+            Node_d7_4 curr = findNode(path);
             curr.parent.map.remove(curr.name);
         } catch (Exception e) { } 
 	}
 	
 	void cmd_cp(char[] srcPath, char[] dstPath) {
         try {
-            Node n1 = findNode(srcPath);
-            Node n2 = findNode(dstPath);
+            Node_d7_4 n1 = findNode(srcPath);
+            Node_d7_4 n2 = findNode(dstPath);
 
-            Node cpy = cloneNode(n1);
+            Node_d7_4 cpy = cloneNode(n1);
             n2.map.put(new String(cpy.name), cpy);
             cpy.parent = n2;
         } catch (Exception e) { }
 	}
 
-    Node cloneNode(Node node) {
+    Node_d7_4 cloneNode(Node_d7_4 node) {
         try {
-            Node result = getNode(new String(node.name));
+            Node_d7_4 result = getNode(new String(node.name));
 
-            ArrayList<Pair<Node, Node> > queue = new ArrayList<>();
-            queue.add(new Pair(node, result));
+            ArrayList<Pair_d7_4<Node_d7_4, Node_d7_4> > queue = new ArrayList<>();
+            queue.add(new Pair_d7_4(node, result));
             while (!queue.isEmpty()) {
-                Pair p = queue.remove(0);
-                Node n1 = p.first;
-                Node n2 = p.second;
+                Pair_d7_4 p = queue.remove(0);
+                Node_d7_4 n1 = p.first;
+                Node_d7_4 n2 = p.second;
 
                 Iterator<String> keys = n1.map.keySet().iterator();
                 while (keys.hasNext()) {
                     String key = keys.next();
 
-                    Node cn = getNode(key);
+                    Node_d7_4 cn = getNode(key);
                     cn.parent = n2;
                     n2.map.put(key, cn);
-                    queue.add(new Pair(n1.map.get(key), cn));
+                    queue.add(new Pair_d7_4(n1.map.get(key), cn));
                 }
             }
             return result;
@@ -132,8 +132,8 @@ class UserSolution {
 	
 	void cmd_mv(char[] srcPath, char[] dstPath) {
         try {
-            Node n1 = findNode(srcPath);
-            Node n2 = findNode(dstPath);
+            Node_d7_4 n1 = findNode(srcPath);
+            Node_d7_4 n2 = findNode(dstPath);
 
             n1.parent.map.remove(n1.name);
             n2.map.put(n1.name, n1);
@@ -144,12 +144,12 @@ class UserSolution {
 	int cmd_find(char[] path) {
         try {
             int cnt = 0;
-            Node node = findNode(path);
+            Node_d7_4 node = findNode(path);
 
-            ArrayList<Node> queue = new ArrayList<>();
+            ArrayList<Node_d7_4> queue = new ArrayList<>();
             queue.add(node);
             while (!queue.isEmpty()) {
-                Node curr = queue.remove(0);
+                Node_d7_4 curr = queue.remove(0);
 
                 Iterator<String> keys = curr.map.keySet().iterator();
                 while (keys.hasNext()) {
@@ -165,9 +165,9 @@ class UserSolution {
 }
 
 
-class Solution {
+class Solution_d7_4 {
 
-	private static UserSolution usersolution = new UserSolution();
+	private static UserSolution_d7_4 usersolution = new UserSolution_d7_4();
 	
 	private final static int CMD_MKDIR		= 1;
 	private final static int CMD_RM			= 2;
