@@ -5,7 +5,7 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-class Solution
+class Solution_d8_4
 {
     static int MAX = 400010;
     static int[] mxh = new int[MAX];
