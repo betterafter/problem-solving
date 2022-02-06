@@ -6,15 +6,15 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.PriorityQueue;
 
-class Node implements Comparable<Node> {
+class Node_d8_5 implements Comparable<Node_d8_5> {
     long a, b;
-    public Node(long a, long b) {
+    public Node_d8_5(long a, long b) {
         this.a = a;
         this.b = b;
     }
 
     @Override
-    public int compareTo(Node o) {
+    public int compareTo(Node_d8_5 o) {
         if (a < o.a) return -1;
         else if (a == o.a) return 0;
         else return 1;
@@ -22,10 +22,10 @@ class Node implements Comparable<Node> {
         
 }
 
-class Solution
+class Solution_d8_5
 {
     static long[] num = new long[11];
-    static PriorityQueue<Node> pq = new PriorityQueue<>();
+    static PriorityQueue<Node_d8_5> pq = new PriorityQueue<>();
 	public static void main(String args[]) throws Exception
 	{
 		BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
@@ -44,18 +44,18 @@ class Solution
             }
 
             K = Long.parseLong(br.readLine());
-            pq.add(new Node(0, K));
+            pq.add(new Node_d8_5(0, K));
 
             while (!pq.isEmpty()) {
 
                 if (pq.peek().b == 0) break;
-                Node curr = pq.poll();
+                Node_d8_5 curr = pq.poll();
                 long a = curr.a;
                 long b = curr.b;
 
-                pq.add(new Node(a + b, 0));
+                pq.add(new Node_d8_5(a + b, 0));
                 for (int i = 0; i < N; i++) {
-                    pq.add(new Node(a + b % num[i], b / num[i]));
+                    pq.add(new Node_d8_5(a + b % num[i], b / num[i]));
                 }
             }
 
