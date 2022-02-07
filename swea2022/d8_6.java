@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
-class UserSolution {
+class UserSolution_d8_6 {
 
     HashMap<Integer, Post> postmap = new HashMap<>();
     User[] users = new User[1001];
@@ -148,7 +148,7 @@ class UserSolution {
 }
 
 
-class Solution {
+class Solution_d8_6 {
 
 	private static int mSeed;
 	private static int pseudo_rand()
@@ -170,7 +170,7 @@ class Solution {
 	private static int min_post_cnt;
 	
 	private static BufferedReader br;
-	private static UserSolution user = new UserSolution();
+	private static UserSolution_d8_6 user = new UserSolution_d8_6();
 
 	private static boolean run() throws Exception
 	{
