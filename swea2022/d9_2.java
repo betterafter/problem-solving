@@ -5,7 +5,7 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-class Solution
+class Solution_d9_2
 {
     static int SIZE = 100010;
     static int[] pi = new int[SIZE];
