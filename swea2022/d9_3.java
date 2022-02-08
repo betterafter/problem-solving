@@ -5,7 +5,7 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-class Solution
+class Solution_d9_3
 {
     static int DIV = 1 << 18;
     static int WIDTH_HASH = 5381;
@@ -40,14 +40,6 @@ class Solution
     }
 
     static void chashing() {
-
-        // for (int i = 0; i < 10; i++) {
-        //     for (int j = 0; j < 10; j++) {
-        //         System.out.printf(teacher[i][j] % DIV + " ");
-        //     }
-        //     System.out.println("");
-        // }
-
         for (int w = 0; w <= M - W; w++) {
             int phash = 0, chash = 0, power = 1;
             for (int h = 0; h <= N - H; h++) {
@@ -60,7 +52,6 @@ class Solution
                 } else {
                     phash = HEIGHT_HASH * (phash - teacher[h - 1][w] * power) + teacher[H - 1 + h][w];
                 }
-                //System.out.println(phash + " , " + chash);
                 if (phash == chash) ans++;
             }
         }      
