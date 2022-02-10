@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-class UserSolution {
+class UserSolution_d9_5 {
 
     int N, K, HASH = 200003;
     static User[] users = new User[1010];
@@ -166,10 +166,10 @@ class UserSolution {
     }
 }
 
-class Solution {
+class Solution_d9_5 {
 
 	private static BufferedReader br;
-	private static UserSolution usersolution = new UserSolution();
+	private static UserSolution_d9_5 usersolution = new UserSolution_d9_5();
 	
 	private final static int INIT         = 0;
 	private final static int SENDMAIL     = 1;
