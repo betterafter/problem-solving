@@ -7,16 +7,16 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Scanner;
 
-class Pair {
+class Pair_d9_6 {
     String first;
     int second;
-    public Pair(String first, int second) {
+    public Pair_d9_6(String first, int second) {
         this.first = first;
         this.second = second;
     }
 }
 
-class UserSolution {
+class UserSolution_d9_6 {
 
     int N = 0;
     HashMap<Integer, String> idxTable = new HashMap<>();
@@ -100,7 +100,7 @@ class UserSolution {
         }
 
         // for (int i = 0; i < temp.size(); i++) {
-        //     Pair p = temp.get(i);
+        //     Pair_d9_6 p = temp.get(i);
         //     String val = p.first; int idx = p.second;
         //     if (hashTable.containsKey(val)) hashTable.get(val).add(idx);
         //     else {
@@ -131,7 +131,7 @@ class UserSolution {
     }
 }
 
-class Solution {
+class Solution_d9_6 {
 	
 	private static int mSeed = 5;
 	
@@ -141,7 +141,7 @@ class Solution {
 	private static int total_score = 0;
 	
 	private static Scanner sc;
-	private static UserSolution user = new UserSolution();
+	private static UserSolution_d9_6 user = new UserSolution_d9_6();
 	
 	private static char dummy1[] = new char[DUMMY_LEN];
 	private static char init_string[] = new char[MAXL];
