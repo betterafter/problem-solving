@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-class UserSolution
+class UserSolution_d10
 {
     ArrayList<Character>[] memo = new ArrayList[301];
     int[][] count = new int[301][27];
@@ -91,14 +91,14 @@ class UserSolution
 	}
 }
 
-class Solution
+class Solution_d10
 {
 	private final static int CMD_INIT       = 100;
 	private final static int CMD_INSERT     = 200;
 	private final static int CMD_MOVECURSOR = 300;
 	private final static int CMD_COUNT      = 400;
 	
-	private final static UserSolution usersolution = new UserSolution();
+	private final static UserSolution_d10 usersolution = new UserSolution_d10();
 	
 	private static void String2Char(char[] buf, String str, int maxLen)
 	{
