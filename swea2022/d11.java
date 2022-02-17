@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.StringTokenizer;
 
-class UserSolution {
+class UserSolution_d11 {
 
     class Pos {
         int x, y;
@@ -299,9 +299,9 @@ class UserSolution {
     }
 }
 
-class Solution {
+class Solution_d11 {
 	private static BufferedReader br;
-	private static UserSolution usersolution = new UserSolution();
+	private static UserSolution_d11 usersolution = new UserSolution_d11();
 
 	private final static int INIT = 100;
 	private final static int ADD_PLACE = 200;
