@@ -19,28 +19,35 @@ for idx in range(1, len(li) + 1):
 
 print(strength)
 
+cnt = 0
 robots = []
 while strength.count(0) - 1 < K:
+    print(strength.count(0))
     # 1. 일단 벨트 회전부터
     for idx in range(1, 2 * N):
-        nbelt[idx] = belt[idx]
+        nbelt[idx + 1] = belt[idx][:]
+        print('nbelt idx:: N', idx, N, nbelt[idx])
         # N번째 위치면 내리기
         if idx == N - 1 and nbelt[idx][0] == 1:
-            nbelt[idx][0] = 0
-            nbelt[idx][1] = 0
+            print('helo')
+        #     nbelt[idx][0] = 0
+        #     nbelt[idx][1] = 0
     nbelt[1] = belt[2 * N] 
 
-    print(nbelt)
+    print('(1) ----->', nbelt)
 
     # 2. 로봇 옮기기
     for idx in range(1, 2 * N + 1):
         if nbelt[idx][0] == 1:
             # nbelt 정보랑 현재 위치
-            robots.append([nbelt[idx], idx])
+            robots.append([nbelt[idx][:], idx])
 
         robots.sort(key = lambda x: (x[1]))
 
-    lastOrder = robots[-1][1]
+    
+    lastOrder = 0
+    if len(robots) != 0:
+        lastOrder = robots[-1][1]
 
     for robot in robots:
         pos = robot[1]
@@ -65,13 +72,19 @@ while strength.count(0) - 1 < K:
                 strength[pos + 1] -= 1
                 nbelt[pos] = [0, 0]
 
-        # 1번에 로봇 올리기 시도하기
-        if nbelt[1][0] == 0 and strength[1] >= 1:
-            nbelt[1][0] = 1
-            nbelt[1][1] = lastOrder
-            strength[1] -= 1
+    # 1번에 로봇 올리기 시도하기
+    if nbelt[1][0] == 0 and strength[1] >= 1:
+        nbelt[1][0] = 1
+        nbelt[1][1] = lastOrder
+        strength[1] -= 1
 
-    belt = nbelt.copy()
+    print(nbelt)
+    belt = nbelt[:]
+    print('belt::', belt)
+    cnt += 1
+
+    if (cnt >= 10):
+        break
 
 
 print(belt)
